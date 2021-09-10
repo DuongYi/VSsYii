@@ -6,7 +6,6 @@ function Routes() {
   return (
     <Suspense fallback={<LoadingScreen />}>
       <Switch>
-        <Route exact path="/" component={lazy(() => import("./views/Home"))} />
         <Route
           exact
           path="/login"
@@ -16,6 +15,18 @@ function Routes() {
           exact
           path="/register"
           component={lazy(() => import("./views/auth/Register"))}
+        />
+        <Route
+          path="*"
+          render={(props) => (
+            <Switch>
+              <Route
+                exact
+                path="/"
+                component={lazy(() => import("src/views/Home"))}
+              />
+            </Switch>
+          )}
         />
       </Switch>
     </Suspense>

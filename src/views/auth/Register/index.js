@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 
 function Register() {
   return (
-    <p>Hello World</p>
+    <div style={{ height: "100vh", backgroundColor: "yellow" }}>
+      <h1>VSs Yii</h1>
+    </div>
   );
 }
 
